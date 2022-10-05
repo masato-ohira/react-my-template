@@ -5,7 +5,6 @@ import { mobile } from '@/styles/media'
 import { useSelector, useDispatch } from 'react-redux'
 import { setActive, getters } from '@/store/modal'
 import FadeTransition from '@/components/transitions/fade-transition'
-import Close from '@material-ui/icons/Close'
 import useEscapeKey from '@/hooks/useEscapeKey'
 
 type ModalProps = {
@@ -31,7 +30,7 @@ const Modal = (props: ModalProps) => {
             className='contest-modal__close'
             onClick={closeModal}
           >
-            <Close />
+            <i className='material-icons'>close</i>
           </div>
           <div
             css={styles.background}
@@ -80,20 +79,17 @@ const setStyle = (active: boolean) => {
       cursor: pointer;
       z-index: 40;
 
-      svg {
-        display: block;
-        width: 50px;
-        height: 50px;
-        fill: #ccc;
+      i {
+        font-size: 50px;
+        color: #fff;
       }
 
       ${mobile} {
         top: 15px;
         right: 15px;
 
-        svg {
-          width: 40px;
-          height: 40px;
+        i {
+          font-size: 40px;
         }
       }
     `,
